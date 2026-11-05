@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ARULJOTHI | Agreement Store</title>
+<meta name="description" content="Editable consulting and building contract agreement documents from ARULJOTHI.">
+<style>
+:root{--navy:#071b66;--red:#e3131b;--ink:#172033;--muted:#647084;--paper:#fff;--bg:#f4f6fb}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#fff;border-bottom:4px solid var(--red);padding:18px 5%;display:flex;align-items:center;gap:18px}
+.logo{width:82px;height:82px;object-fit:contain;border:1px solid #e7eaf1;border-radius:8px}header h1{margin:0;color:var(--navy);font-size:clamp(22px,4vw,34px);letter-spacing:1px}header p{margin:5px 0 0;color:var(--muted)}
+.hero{text-align:center;padding:44px 18px 28px}.hero h2{font-size:clamp(25px,4vw,38px);margin:0 0 10px;color:var(--navy)}.hero p{margin:0;color:var(--muted)}
+.grid{max-width:980px;margin:0 auto 40px;padding:0 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{background:var(--paper);border-radius:16px;padding:26px;box-shadow:0 8px 28px #0b1c4612;border:1px solid #e7eaf1;display:flex;flex-direction:column;min-height:290px}
+.icon{width:58px;height:58px;border-radius:14px;background:#eef1ff;color:var(--navy);display:grid;place-items:center;font-size:28px;margin-bottom:18px}.card h3{margin:0 0 9px;color:var(--navy);font-size:22px}.card p{color:var(--muted);line-height:1.5;margin:0 0 18px}.price{font-size:30px;font-weight:800;margin-top:auto;margin-bottom:15px;color:var(--ink)}
+button{border:0;border-radius:9px;background:var(--red);color:#fff;padding:14px 18px;font-weight:700;font-size:16px;cursor:pointer}button:disabled{opacity:.55;cursor:wait}.note{max-width:900px;margin:0 auto 28px;padding:0 18px;color:var(--muted);font-size:13px;line-height:1.5;text-align:center}
+footer{text-align:center;background:#071b66;color:#fff;padding:24px 15px;line-height:1.7}footer strong{color:#fff}#status{max-width:680px;margin:0 auto 24px;padding:0 18px;text-align:center;font-weight:600}
+</style>
+</head>
+<body>
+<header><img class="logo" src="./logo.jpg" alt="ARULJOTHI logo"><div><h1>ARULJOTHI</h1><p>Consulting &amp; Contract Agreement Store</p></div></header>
+<section class="hero"><h2>Professional Agreement Documents</h2><p>Editable Microsoft Word documents for your project documentation.</p></section>
+<main class="grid">
+ <article class="card"><div class="icon">📄</div><h3>Consulting Agreement</h3><p>Consulting agreement document in editable Word format.</p><div class="price">₹299</div><button data-product="consulting" onclick="buy('consulting',this)">Buy Now – ₹299</button></article>
+ <article class="card"><div class="icon">📑</div><h3>Building Contract Agreement</h3><p>Building contract agreement document in editable Word format.</p><div class="price">₹299</div><button data-product="contract" onclick="buy('contract',this)">Buy Now – ₹299</button></article>
+</main>
+<div id="status" role="status" aria-live="polite"></div>
+<div class="note">Digital product: please review the document and adapt it to your project and applicable requirements. Purchase grants access to the selected document only.</div>
+<footer><strong>Created by ER. V. ABHISHEK, B.E., R.E.</strong><br>ARULJOTHI CIVILTECHTURE</footer>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+// Set this to your deployed Render backend URL, without a trailing slash.
+const API_BASE = 'https://YOUR-RENDER-SERVICE.onrender.com';
+const RAZORPAY_KEY_ID = 'YOUR_RAZORPAY_KEY_ID';
+const statusBox=document.getElementById('status');
+async function buy(product,button){
+ if(API_BASE.includes('YOUR-')||RAZORPAY_KEY_ID.includes('YOUR_')){statusBox.textContent='Store setup is not complete yet. Please try again later.';return;}
+ button.disabled=true;statusBox.textContent='Creating secure payment order…';
+ try{
+  const res=await fetch(API_BASE+'/api/create-order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product})});
+  const data=await res.json();if(!res.ok)throw new Error(data.error||'Unable to create order.');
+  const options={key:RAZORPAY_KEY_ID,amount:data.amount,currency:'INR',name:'ARULJOTHI',description:data.productName,order_id:data.orderId,
+   prefill:{},theme:{color:'#e3131b'},
+   handler:async function(response){
+    statusBox.textContent='Verifying payment securely…';
+    try{const vr=await fetch(API_BASE+'/api/verify-payment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...response,product,orderId:data.orderId})});const verified=await vr.json();if(!vr.ok)throw new Error(verified.error||'Payment verification failed.');
+     statusBox.textContent='Payment verified. Your download is starting…';window.location.href=API_BASE+'/api/download/'+encodeURIComponent(verified.downloadToken);
+    }catch(e){statusBox.textContent=e.message+' If money was debited, contact support with your Razorpay payment ID.';}
+   },modal:{ondismiss:function(){statusBox.textContent='Payment window closed. No document was downloaded.';}}
+  };
+  const checkout=new Razorpay(options);checkout.on('payment.failed',function(){statusBox.textContent='Payment failed. Please try again.';});checkout.open();
+ }catch(e){statusBox.textContent=e.message;}finally{button.disabled=false;}
+}
+</script>
+</body></html>
