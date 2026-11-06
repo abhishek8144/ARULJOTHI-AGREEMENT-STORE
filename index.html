@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARULJOTHI BUILDING FORMATS</title>
+<meta name="description" content="Construction agreements, PDF guides and editable Excel site-management formats from ARULJOTHI.">
+<style>
+:root{--navy:#071b66;--red:#e3131b;--ink:#172033;--muted:#647084;--paper:#fff;--bg:#f4f6fb}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#fff;border-bottom:4px solid var(--red);padding:18px 5%;display:flex;align-items:center;gap:18px}
+.logo{width:82px;height:82px;object-fit:contain;border:1px solid #e7eaf1;border-radius:8px}
+header h1{margin:0;color:var(--navy);font-size:clamp(21px,4vw,34px);letter-spacing:1px}
+header p{margin:5px 0 0;color:var(--muted)}
+.hero{text-align:center;padding:38px 18px 22px}
+.hero h2{font-size:clamp(25px,4vw,38px);margin:0 0 10px;color:var(--navy)}
+.hero p{margin:0;color:var(--muted);line-height:1.5}
+.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:20px auto 26px;padding:0 15px}
+.filters button{background:#fff;color:var(--navy);border:1px solid #d7ddeb;padding:10px 16px}
+.filters button.active{background:var(--navy);color:#fff}
+.section-title{max-width:1100px;margin:28px auto 14px;padding:0 18px;color:var(--navy);font-size:23px}
+.grid{max-width:1100px;margin:0 auto 34px;padding:0 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px}
+.card{background:var(--paper);border-radius:16px;padding:23px;box-shadow:0 8px 28px #0b1c4612;border:1px solid #e7eaf1;display:flex;flex-direction:column;min-height:285px}
+.icon{width:52px;height:52px;border-radius:14px;background:#eef1ff;color:var(--navy);display:grid;place-items:center;font-size:26px;margin-bottom:12px}
+.tag{font-size:11px;font-weight:800;letter-spacing:.8px;color:var(--red);margin-bottom:8px}
+.card h3{margin:0 0 9px;color:var(--navy);font-size:19px}
+.card p{color:var(--muted);line-height:1.5;margin:0 0 16px}
+.price{font-size:28px;font-weight:800;margin-top:auto;margin-bottom:13px;color:var(--ink)}
+button{border:0;border-radius:9px;background:var(--red);color:#fff;padding:13px 16px;font-weight:700;font-size:15px;cursor:pointer}
+button:disabled{opacity:.55;cursor:wait}
+.note{max-width:900px;margin:0 auto 28px;padding:0 18px;color:var(--muted);font-size:13px;line-height:1.5;text-align:center}
+#status{max-width:680px;margin:0 auto 24px;padding:0 18px;text-align:center;font-weight:600;min-height:24px}
+footer{text-align:center;background:var(--navy);color:#fff;padding:24px 15px;line-height:1.7}
+footer strong{color:#fff}
+@media(max-width:520px){header{padding:14px 4%;gap:12px}.logo{width:62px;height:62px}.card{min-height:260px}}
+</style>
+</head>
+<body>
+<header>
+  <img class="logo" src="./logo.jpg" alt="ARULJOTHI logo">
+  <div><h1>ARULJOTHI BUILDING FORMATS</h1><p>Construction Agreements, PDF Guides &amp; Excel Formats</p></div>
+</header>
+<section class="hero">
+  <h2>Professional Building Documents</h2>
+  <p>Practical digital formats for civil engineers, contractors, architects and building owners.</p>
+</section>
+
+<h2 class="section-title">Existing Products</h2>
+<main class="grid">
+  <article class="card"><div class="icon">📄</div><span class="tag">WORD DOCUMENT</span><h3>Consulting Agreement</h3><p>Editable consulting agreement in Microsoft Word format.</p><div class="price">₹299</div><button type="button" onclick="buy('consulting',this)">Buy Now – ₹299</button></article>
+  <article class="card"><div class="icon">📑</div><span class="tag">WORD DOCUMENT</span><h3>Building Contract Agreement</h3><p>Editable building contract agreement in Microsoft Word format.</p><div class="price">₹299</div><button type="button" onclick="buy('contract',this)">Buy Now – ₹299</button></article>
+  <article class="card"><div class="icon">📊</div><span class="tag">EXCEL</span><h3>Building Estimate Format</h3><p>Building estimate format in Microsoft Excel format.</p><div class="price">₹399</div><button type="button" onclick="buy('estimate',this)">Buy Now – ₹399</button></article>
+</main>
+
+<h2 class="section-title">Construction PDF Products – ₹99 Each</h2>
+<main class="grid">
+  <article class="card" data-type="PDF">
+    <div class="icon">📋</div><span class="tag">PDF</span><h3>Building Approval Document Kit</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('approval_kit',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">📐</div><span class="tag">PDF</span><h3>Building Plan Checklist</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('building_plan_checklist',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">📝</div><span class="tag">PDF</span><h3>Site Inspection Report Format</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('site_inspection_report',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">🧾</div><span class="tag">PDF</span><h3>Contractor Bill Format Guide</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('contractor_bill_guide',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">📄</div><span class="tag">PDF</span><h3>Work Order Format</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('work_order_format',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">💰</div><span class="tag">PDF</span><h3>Construction Quotation Format</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('construction_quotation',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">📑</div><span class="tag">PDF</span><h3>House Construction Agreement Guide</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('agreement_guide',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">✅</div><span class="tag">PDF</span><h3>Construction Quality Control Checklist</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('quality_control',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">🏠</div><span class="tag">PDF</span><h3>Building Maintenance Manual</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('maintenance_manual',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">📊</div><span class="tag">PDF</span><h3>Complete Building Estimation Kit</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('estimation_kit',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">🧰</div><span class="tag">PDF</span><h3>Complete Contractor Business Kit</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('contractor_business_kit',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">👷</div><span class="tag">PDF</span><h3>Civil Engineer Site Management Kit</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('site_management_kit',this)">Buy Now – ₹99</button>
+  </article>
+  <article class="card" data-type="PDF">
+    <div class="icon">📌</div><span class="tag">PDF</span><h3>Building Approval Tracker</h3>
+    <p>Printable construction guide / checklist in PDF format.</p><div class="price">₹99</div>
+    <button type="button" onclick="buy('approval_tracker',this)">Buy Now – ₹99</button>
+  </article>
+</main>
+<h2 class="section-title">Construction Excel Products – ₹149 Each</h2>
+<main class="grid">
+  <article class="card" data-type="EXCEL">
+    <div class="icon">👥</div><span class="tag">EXCEL</span><h3>Site Attendance Report</h3>
+    <p>Editable line-by-line Excel register with ready-to-use columns.</p><div class="price">₹149</div>
+    <button type="button" onclick="buy('site_attendance',this)">Buy Now – ₹149</button>
+  </article>
+  <article class="card" data-type="EXCEL">
+    <div class="icon">📏</div><span class="tag">EXCEL</span><h3>Site Measurement Book</h3>
+    <p>Editable line-by-line Excel register with ready-to-use columns.</p><div class="price">₹149</div>
+    <button type="button" onclick="buy('measurement_book',this)">Buy Now – ₹149</button>
+  </article>
+  <article class="card" data-type="EXCEL">
+    <div class="icon">📅</div><span class="tag">EXCEL</span><h3>Daily Construction Report</h3>
+    <p>Editable line-by-line Excel register with ready-to-use columns.</p><div class="price">₹149</div>
+    <button type="button" onclick="buy('daily_construction_report',this)">Buy Now – ₹149</button>
+  </article>
+  <article class="card" data-type="EXCEL">
+    <div class="icon">🦺</div><span class="tag">EXCEL</span><h3>Labour Attendance Register</h3>
+    <p>Editable line-by-line Excel register with ready-to-use columns.</p><div class="price">₹149</div>
+    <button type="button" onclick="buy('labour_attendance',this)">Buy Now – ₹149</button>
+  </article>
+  <article class="card" data-type="EXCEL">
+    <div class="icon">💵</div><span class="tag">EXCEL</span><h3>Labour Payment Register</h3>
+    <p>Editable line-by-line Excel register with ready-to-use columns.</p><div class="price">₹149</div>
+    <button type="button" onclick="buy('labour_payment',this)">Buy Now – ₹149</button>
+  </article>
+  <article class="card" data-type="EXCEL">
+    <div class="icon">📦</div><span class="tag">EXCEL</span><h3>Material Stock Register</h3>
+    <p>Editable line-by-line Excel register with ready-to-use columns.</p><div class="price">₹149</div>
+    <button type="button" onclick="buy('material_stock',this)">Buy Now – ₹149</button>
+  </article>
+  <article class="card" data-type="EXCEL">
+    <div class="icon">🏗️</div><span class="tag">EXCEL</span><h3>Cement & Steel Stock Register</h3>
+    <p>Editable line-by-line Excel register with ready-to-use columns.</p><div class="price">₹149</div>
+    <button type="button" onclick="buy('cement_steel_stock',this)">Buy Now – ₹149</button>
+  </article>
+  <article class="card" data-type="EXCEL">
+    <div class="icon">🧮</div><span class="tag">EXCEL</span><h3>Contractor Bill Worksheet</h3>
+    <p>Editable line-by-line Excel register with ready-to-use columns.</p><div class="price">₹149</div>
+    <button type="button" onclick="buy('contractor_bill',this)">Buy Now – ₹149</button>
+  </article>
+  <article class="card" data-type="EXCEL">
+    <div class="icon">📈</div><span class="tag">EXCEL</span><h3>Construction Quotation / BOQ Worksheet</h3>
+    <p>Editable line-by-line Excel register with ready-to-use columns.</p><div class="price">₹149</div>
+    <button type="button" onclick="buy('quotation_boq',this)">Buy Now – ₹149</button>
+  </article>
+</main>
+
+<div id="status" role="status" aria-live="polite"></div>
+<div class="note">Digital products are delivered electronically. Each successful purchase unlocks only the selected document. Templates must be checked and adapted to the project and applicable local requirements.</div>
+<footer><strong>Created by ER. V. ABHISHEK, B.E., R.E.</strong><br>ARULJOTHI CIVILTECHTURE</footer>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+const API_BASE = 'https://aruljothi-agreement-store-backend.onrender.com';
+const RAZORPAY_KEY_ID = 'rzp_live_To61mF9o1g0GFJ';
+const statusBox = document.getElementById('status');
+
+async function buy(product, button) {
+  button.disabled = true;
+  statusBox.textContent = 'Connecting securely to payment service…';
+  try {
+    const orderResponse = await fetch(API_BASE + '/api/create-order', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({product})
+    });
+    const orderData = await orderResponse.json();
+    if (!orderResponse.ok) throw new Error(orderData.error || 'Unable to create payment order.');
+
+    const options = {
+      key: RAZORPAY_KEY_ID,
+      amount: orderData.amount,
+      currency: orderData.currency || 'INR',
+      name: 'ARULJOTHI BUILDING FORMATS',
+      description: orderData.productName,
+      order_id: orderData.orderId,
+      theme: {color: '#e3131b'},
+      handler: async function (paymentResponse) {
+        statusBox.textContent = 'Payment received. Verifying securely…';
+        try {
+          const verifyResponse = await fetch(API_BASE + '/api/verify-payment', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({...paymentResponse, product, orderId: orderData.orderId})
+          });
+          const verified = await verifyResponse.json();
+          if (!verifyResponse.ok) throw new Error(verified.error || 'Payment verification failed.');
+          if (!verified.downloadToken) throw new Error('Payment verified, but download token was not returned. Please contact support.');
+          statusBox.textContent = 'Payment verified. Your selected document is downloading…';
+          window.location.href = API_BASE + '/api/download/' + encodeURIComponent(verified.downloadToken);
+        } catch (error) {
+          statusBox.textContent = error.message + ' If money was debited, keep your Razorpay payment ID and contact support.';
+        }
+      },
+      modal: {ondismiss: function () {statusBox.textContent = 'Payment window closed. No document was downloaded.';}}
+    };
+    const checkout = new Razorpay(options);
+    checkout.on('payment.failed', function () {statusBox.textContent = 'Payment failed. Please try again.';});
+    checkout.open();
+  } catch (error) {
+    statusBox.textContent = error.message || 'Something went wrong. Please try again.';
+  } finally {
+    button.disabled = false;
+  }
+}
+</script>
+</body>
+</html>
